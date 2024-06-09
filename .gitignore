@@ -1,0 +1,4 @@
+raw-img/
+flagged/
+best_model_knn.pkl
+best_model_svm.pkl
