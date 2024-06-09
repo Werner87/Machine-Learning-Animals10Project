@@ -22,6 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest
 
       - name: Run tests
         run: pytest
@@ -34,10 +35,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t animal-classifier .
+        run: docker build -t machinelearninganimals10project .
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.Superniania123 }}" | docker login -u "${{ secrets.werner8701 }}" --password-stdin
+        run: echo "${{ secrets.Superniania123 }}" | docker login -u "${{ secrets.maciekwerner0@gmail.com }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push ${{ secrets.werner8701 }}/animal-classifier
+        run: docker push ${{ secrets.maciekwerner0@gmail.com }}/machinelearninganimals10project
