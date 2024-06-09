@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI/CD
 
 on:
   push:
@@ -22,6 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest
 
       - name: Run tests
         run: pytest
@@ -34,17 +35,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t animal-classifier .
+        run: docker build -t CI/CD .
 
       - name: Log in to Docker Hub
-<<<<<<< HEAD:.github/workflow/main.yml
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/animal-classifier
-=======
-        run: echo "${{ secrets.Superniania123 }}" | docker login -u "${{ secrets.werner8701 }}" --password-stdin
-
-      - name: Push Docker image
-        run: docker push ${{ secrets.werner8701 }}/animal-classifier
->>>>>>> parent of eff0489 (Update main.yml):.github/workflows/main.yml
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/CI/CD
