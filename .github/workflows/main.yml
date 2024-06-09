@@ -38,7 +38,7 @@ jobs:
         run: docker build -t machinelearninganimals10project .
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.Superniania123 }}" | docker login -u "${{ secrets.maciekwerner0@gmail.com }}" --password-stdin
+        run: echo "${{ secrets.Superniania123 }}" | docker login -u "${{ secrets.werner8701 }}" --password-stdin
 
       - name: Push Docker image
         run: docker push ${{ secrets.maciekwerner0@gmail.com }}/machinelearninganimals10project
