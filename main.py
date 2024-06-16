@@ -55,4 +55,4 @@ iface = gr.Interface(
     live=True
 )
 
-iface.launch()
+iface.launch(share=True)
